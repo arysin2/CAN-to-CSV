@@ -57,27 +57,27 @@ int main() {
             
             // We found a match! Now loop through every signal in that message
                 for (const auto& sig : msg.Signals()) {
-    double phys_val;
+                    double phys_val;
 
-    if (sig.Name() == "Current") {
-        // MANUALLY combine bytes 2 and 3 into a signed 16-bit integer
-        // frame.data[2] is the Low Byte, frame.data[3] is the High Byte
-        int16_t raw_signed = (int16_t)((frame.data[3] << 8) | frame.data[2]);
-        
-        // Apply your DBC factor (0.1) manually
-        phys_val = raw_signed * 0.1; 
-        
-    } else {
-        // For Voltage (Unsigned), the library is working perfectly
-        double raw_val = sig.Decode(frame.data);
-        phys_val = sig.RawToPhys(raw_val);
-    }
+                    if (sig.Name() == "Current") {
+                        // MANUALLY combine bytes 2 and 3 into a signed 16-bit integer
+                        // frame.data[2] is the Low Byte, frame.data[3] is the High Byte
+                        int16_t raw_signed = (int16_t)((frame.data[3] << 8) | frame.data[2]);
+                        
+                        // Apply your DBC factor (0.1) manually
+                        phys_val = raw_signed * 0.1; 
+                        
+                    } else {
+                        // For Voltage (Unsigned), the library is working perfectly
+                        double raw_val = sig.Decode(frame.data);
+                        phys_val = sig.RawToPhys(raw_val);
+                    }
 
-    csv_out << frame.timestamp << "," 
-            << msg.Name() << "," 
-            << sig.Name() << "," 
-            << phys_val << "," 
-            << sig.Unit() << "\n";
+                        csv_out << frame.timestamp << "," 
+                                << msg.Name() << "," 
+                                << sig.Name() << "," 
+                                << phys_val << "," 
+                                << sig.Unit() << "\n";
 }
             }
         }
@@ -87,5 +87,4 @@ int main() {
     csv_out.close();
 
     return 0;
-
 }
