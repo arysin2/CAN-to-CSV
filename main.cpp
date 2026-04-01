@@ -67,7 +67,6 @@ int main() {
         // Apply your DBC factor (0.1) manually
         phys_val = raw_signed * 0.1; 
         
-        std::cout << "Manual Current Decode: " << phys_val << " (Raw: " << raw_signed << ")" << std::endl;
     } else {
         // For Voltage (Unsigned), the library is working perfectly
         double raw_val = sig.Decode(frame.data);
