@@ -1,0 +1,8 @@
+Timestamp,MessageName,SignalName,PhysicalValue,Unit
+0,BMS_1,Voltage,400,V
+0,BMS_1,Current,-100,A
+1,Motor_Controller,Motor_Temp,85,C
+1,Motor_Controller,Motor_RPM,4500,rpm
+2,Safety_Status,AIR_Status,1,
+2,Safety_Status,Brake_Pressed,0,
+2,Safety_Status,BSPD_Fault,0,

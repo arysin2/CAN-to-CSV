@@ -14,7 +14,7 @@ int main() {
 
     // 1. Open the DBC file using a standard C++ file stream
     // You'll need to put a real .dbc file in your folder later
-    std::ifstream dbc_file("my_car_data.dbc");
+    std::ifstream dbc_file("car_data.dbc");
 
     if (!dbc_file.is_open()) {
         std::cerr << "Error: Could not open DBC file!" << std::endl;

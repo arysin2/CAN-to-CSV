@@ -1,0 +1,17 @@
+VERSION ""
+NS_ :
+BS_: 
+BU_: 
+
+BO_ 500 BMS_1: 8 Vector__XXX
+ SG_ Voltage : 0|16@1+ (0.01,0) [0|600] "V" Vector__XXX
+ SG_ Current : 16|16@1- (0.1,0) [-1000|1000] "A" Vector__XXX
+
+BO_ 600 Motor_Controller: 8 Vector__XXX
+ SG_ Motor_Temp : 0|8@1+ (1,0) [0|255] "C" Vector__XXX
+ SG_ Motor_RPM : 8|16@1- (1,0) [-15000|15000] "rpm" Vector__XXX
+
+BO_ 700 Safety_Status: 8 Vector__XXX
+ SG_ AIR_Status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Brake_Pressed : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ BSPD_Fault : 2|1@1+ (1,0) [0|1] "" Vector__XXX
